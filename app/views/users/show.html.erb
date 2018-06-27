@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
+<%= provide :title , @user.name %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
 
 <p>
   <strong>Name:</strong>
@@ -11,8 +24,18 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
+  <strong>Created at:</strong>
+  <%= @user.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @user.updated_at %>
+</p>
+
+<p>
+  <strong>Time now:</strong>
+  <%= Time.now %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
