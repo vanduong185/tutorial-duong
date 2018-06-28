@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
   resources :microposts
   resources :users
-  resources :account_activations , only: [:edit]
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :edit, :update, :create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #root 'users#index'
   get '/help', to: 'static_pages#help'
